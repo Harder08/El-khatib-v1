@@ -1,0 +1,498 @@
+@import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@160..700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+
+:root {
+    --black: #2A363B;
+    --red: #CF4647;
+    --yellow: #F5D061;
+    --white: #F8F6F6;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Readex Pro', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.icons {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+nav i {
+    color: var(--black);
+    font-size: 32px;
+    transition: color 0.3s ease;
+}
+
+nav i:hover {
+    color: var(--red);
+}
+
+body {
+    overflow-x: hidden;
+    font-family: Sans-Serif;
+    margin: 0;
+    position: relative;
+    background-color: var(--white);
+  }
+  .fixed {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 99;
+  }
+  nav {
+    display: flex;
+    flex-direction: row;
+    
+  }
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* اسود شفاف */
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 9;
+  }
+
+  .menu-container {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 65px;
+    margin-bottom: 20px;
+    background: var(--white);
+    color: var(--black);
+    padding: 20px;
+    z-index: 1;
+    -webkit-user-select: none;
+    user-select: none;
+    box-sizing: border-box;
+    box-shadow: 0px 7px 20px 10px rgba(156, 156, 156, 0.26);
+  }
+  
+  .menu-logo {
+    width: 50px;
+    height: 60px;
+    background-image: url(assets/شعار\ فريق\ شيكاغو\ بولز.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+  
+  .menu-container a {
+    text-decoration: none;
+    color: #232323;
+    transition: color 0.3s ease;
+  }
+  
+  .menu-container a:hover {
+    color: var(--red);
+  }
+  
+  .menu-container input {
+    display: block;
+    width: 35px;
+    height: 25px;
+    margin: 0;
+    position: absolute;
+    cursor: pointer;
+    opacity: 0; /* hide this */
+    z-index: 12; /* and place it over the hamburger */
+    -webkit-touch-callout: none;
+  }
+  
+  /* Burger menu */
+  .menu-container span {
+    display: block;
+    width: 33px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+    background: var(--black);
+    border-radius: 3px;
+    z-index: 11;
+    transform-origin: 4px 0px;
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                opacity 0.55s ease;
+  }
+  
+  .menu-container span:first-child {
+    transform-origin: 0% 0%;
+  }
+  
+  .menu-container span:nth-child(3) {
+    transform-origin: 0% 100%;
+  }
+  
+  .menu-container input:checked ~ span {
+    opacity: 1;
+    transform: rotate(45deg) translate(3px,-1px);
+    background: var(--black);
+  }
+  
+  .menu-container input:checked ~ span:nth-child(4) {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
+  }
+  
+  .menu-container input:checked ~ span:nth-child(3) {
+    transform: rotate(-45deg) translate(-5px,11px);
+  }
+  
+  .menu ul {
+    list-style: none;
+  }
+  
+  .menu li {
+    padding: 10px 0;
+    font-size: 22px;
+  }
+
+
+  .menu {
+    position: absolute;
+    box-sizing: border-box;
+    width: 300px;
+    left: -300px;
+    top: 0;
+    /* margin: -20px; */
+    padding: 75px 50px 50px;
+    background: var(--white);
+    height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    /* to stop flickering of text in safari */
+    transform-origin: 0% 0%;
+    transform: translateX(0%);
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+    z-index: 10;
+  }
+
+  .menu-container input:checked ~ .menu {
+    transform: translateX(100%);
+    backdrop-filter: rgba(0, 0, 0, 0.7);
+  }
+
+  .menu-container input:checked ~ .overlay {
+    opacity: 1;
+    visibility: visible;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 65px;
+    gap: 30px;
+  }
+  
+  @media  (max-width: 780px) {
+    .head {
+      padding: 50px;
+    }
+    .our-story {
+      flex-direction: column;
+    }
+
+    .our-story #img {
+      height: 200px;
+    }
+
+    .photos {
+      width:  150px;
+      height: 150px;
+     }
+
+     .first, .second, .third {
+      background-size: 150px;
+     }
+
+     .product {
+      display: grid;
+      grid-template-rows: 50px 150px 150px;
+      justify-items: center;
+      gap: 25px;
+     }
+
+     .photos {
+      grid-row: 2 / 3;
+     }
+
+     .Tie-house {
+      background-position-y: 45px !important;
+     }
+
+     .partners-logo div {
+      width:  150px;
+      height: 150px;
+      background-size: 150px;
+     }
+     
+
+  }
+
+  @media (min-width: 781px) {
+    .head {
+      padding: 150px;
+    }
+
+    .text {
+      align-items: center;
+    }
+
+    .text h1 {
+      font-size: 50px;
+     }
+    
+     .text h2 {
+      font-size: 30px;
+     }
+    
+     .text p {
+      font-size: 20px;
+     }
+
+     .our-story {
+      width: 100vw;
+      height: 400px;
+     }
+
+     .lorem {
+      width: 50%;
+     }
+
+     .lorem p {
+      font-size: 20px;
+     }
+
+     .our-story #img {
+      width: 50%;
+     }
+
+     .photos {
+      width:  300px;
+      height: 300px;
+     }
+
+     .first, .second, .third {
+      background-size: 300px;
+     }
+
+     .photo-desc {
+      width: 60vmax;
+     }
+
+     .product p {
+      font-size: 25px;
+    }
+
+    .partners-logo div {
+      width: 300px;
+      height: 300px;
+      background-size: 250px;
+    }
+
+    .Tie-house {
+      background-position-y: 85px;
+    }
+
+    footer ul {
+      font-size: 25px;
+     }
+
+     .product {
+      display: grid;
+      grid-template-columns: 1fr 350px;
+      grid-template-rows: 50px 1fr;
+      height: 300px;
+     }
+
+     .photos {
+      grid-area: 1 / 2 / 2 / 3;
+      justify-self: left;
+
+     }
+  }
+  
+
+ .head {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    color: var(--white);
+    background-image: url(/assets/12281.jpg);
+    background-repeat: no-repeat;
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+  }
+  .text {
+     display: flex;
+     flex-direction: column;
+
+     gap: 15px;
+     position: relative;
+     z-index: 2;
+     color: var(--white);
+     cursor: default;
+  }
+
+ .head::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* لون أسود شفاف */
+    z-index: 1;
+ }
+
+ .text button {
+  padding: 10px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  font-weight: 600;
+  background-color: rgb(171, 0, 0);
+  color: var(--white);
+ }
+
+ .our-story {
+  padding: 30px;
+  background-color: var(--white);
+  display: flex;
+  gap: 30px;
+ }
+
+ .our-story #img {
+  background-image: url(/assets/2149007465.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+ }
+
+ .lorem {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: justify;
+  color: var(--black);
+ }
+
+ .our-products {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  gap: 50px;
+  color: var(--black);
+  background-color: var(--white);
+ }
+
+ .our-products h1:first-of-type {
+  text-align: center;
+ }
+
+ .photos {
+  background-color: white;
+  border-radius: 15px;
+  border: 1px solid var(--red);
+}
+
+.first, .second, .third {
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.first {
+  background-image: url(/assets/Picsart_25-04-26_07-20-38-276.png);
+}
+
+.second {
+  background-image: url(assets/Picsart_25-04-26_07-21-17-127.png);
+}
+
+.third {
+  background-image: url(assets/Picsart_25-04-26_07-22-11-348.png);
+}
+
+
+
+.product p {
+  text-align: justify;
+}
+
+
+.product h1 {
+  text-align: start !important;
+}
+
+.our-partners {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: center;
+  color: var(--black);
+}
+
+.partners-logo {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.partners-logo div {
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.Tie-house {
+  background-image: url(/assets/TiE-House-Logo.png);
+}
+
+.DD {
+  background-image: url(/assets/dalydress.webp);
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: var(--black);
+  color: var(--white);
+  padding: 20px 10px;
+}
+
+footer ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+footer a {
+  text-decoration: none;
+  color: var(--white);
+}
+
+.footer-logo {
+  width: 150px;
+  height: 150px;
+  background-image: url(/assets/شعار\ فريق\ شيكاغو\ بولز.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 150px;
+}
+
