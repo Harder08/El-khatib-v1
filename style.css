@@ -13,6 +13,8 @@
     margin: 0;
     box-sizing: border-box;
     font-family: 'Readex Pro', sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    list-style: none;
 }
 
 html {
@@ -334,7 +336,7 @@ body {
     justify-content: center;
     position: relative;
     color: var(--white);
-    background-image: url(/assets/12281.jpg);
+    background-image: url(/assets/12281.webp);
     background-repeat: no-repeat;
     height: 400px;
     background-size: cover;
@@ -377,10 +379,11 @@ body {
   background-color: var(--white);
   display: flex;
   gap: 30px;
+  scroll-margin-top: 80px;
  }
 
  .our-story #img {
-  background-image: url(/assets/2149007465.jpg);
+  background-image: url(/assets/2149007465.webp);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -401,6 +404,7 @@ body {
   gap: 50px;
   color: var(--black);
   background-color: var(--white);
+  scroll-margin-top: 80px;
  }
 
  .our-products h1:first-of-type {
@@ -419,15 +423,15 @@ body {
 }
 
 .first {
-  background-image: url(/assets/Picsart_25-04-26_07-20-38-276.png);
+  background-image: url(/assets/Picsart_25-04-26_07-20-38-276.webp);
 }
 
 .second {
-  background-image: url(assets/Picsart_25-04-26_07-21-17-127.png);
+  background-image: url(assets/Picsart_25-04-26_07-21-17-127.webp);
 }
 
 .third {
-  background-image: url(assets/Picsart_25-04-26_07-22-11-348.png);
+  background-image: url(assets/Picsart_25-04-26_07-22-11-348.webp);
 }
 
 
@@ -447,6 +451,7 @@ body {
   gap: 20px;
   text-align: center;
   color: var(--black);
+  scroll-margin-top: 80px;
 }
 
 .partners-logo {
@@ -496,3 +501,16 @@ footer a {
   background-size: 150px;
 }
 
+.text {
+  opacity: 0;
+  transform: translateY(-30px);
+  animation: fadeSlide 1s ease forwards;
+  animation-delay: 0.3s;
+}
+
+@keyframes fadeSlide {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

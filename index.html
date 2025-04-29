@@ -7,6 +7,7 @@
     <link rel= "stylesheet" href= "https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" >
     <link rel= "stylesheet" href= "path/to/line-awesome/css/line-awesome-font-awesome.min.css" >
     <link rel="stylesheet" href="/style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="icon" href="/assets/شعار فريق شيكاغو بولز.png">
     <title>الخطيب</title>
 </head>
@@ -33,6 +34,11 @@
                   <li>
                     <a href="#our-story" onclick="handleMenuLinkClick()">
                       قصة نجاحنا
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#our-products" onclick="handleMenuLinkClick()">
+                      منتجاتنا
                     </a>
                   </li>
                   <li>
@@ -70,23 +76,23 @@
                 </a>
             </div>
         </div>
-        <div class="our-story" id="our-story">
+        <div class="our-story" id="our-story" data-aos="fade-up">
           <div class="lorem">
             <h1>قصة نجاحنا</h1>
             <p>منذ عام 1999، انطلقت رحلتنا بشغف حقيقي لتقديم منتج محلي بجودة عالية، يُضاهي المستورد ويتفوق عليه. على مدار أكثر من عشرين سنة، كانت كل خطوة في الإنتاج دليل على التزامنا بالدقة، والإتقان، والاهتمام بالتفاصيل. واجهنا تحديات كتير في البداية، لكن بإصرار فريقنا وإيمانّا بالفكرة، قدرنا نحول الحلم إلى واقع. النهاردة، منتجاتنا مش بس بتعكس جودة الصناعة المصرية، لكن كمان بتحكي حكاية كل واحد اشتغل فيها بإخلاص.</p>
           </div>
           <div id="img"></div>
         </div>
-        <div class="our-products" id="our-products">
-          <h1>أحذيتنا المميزة <i class="las la-fire-alt"></i></h1>
-          <div class="product">
+        <div class="our-products" id="our-products" data-aos="fade-up">
+          <h1 data-aos="fade-up">أحذيتنا المميزة <i class="las la-fire-alt"></i></h1>
+          <div class="product" data-aos="fade-up">
             <!-- <div class="photo-desc"> -->
               <h1>B2-Smart casual</h1>
               <p>حذاء كلاسيكي مُصنَّع يدويًا من جلد طبيعي عالي الجودة باللون البني الغامق، يتميز بتصميم بسيط وأنيق يناسب الإطلالات الرسمية والكاجوال. النعل إيطالي الصنع، يوفر راحة وثبات عاليين مع كل خطوة. يتمتع الحذاء بتشطيب متقن ولمسة نهائية ناعمة، ليجمع بين الفخامة والعملية في آنٍ واحد.</p>
             <!-- </div> -->
             <div class="photos first"></div>
           </div> 
-          <div class="product">
+          <div class="product" data-aos="fade-up">
             <div class="photos second"></div>
             <!-- <div class="photo-desc"> -->
               <h1>Z7-Loafer</h1>
@@ -94,7 +100,7 @@
               </p>
             <!-- </div> -->
           </div> 
-          <div class="product">
+          <div class="product" data-aos="fade-up">
             <!-- <div class="photo-desc"> -->
               <h1>M5-snaker</h1>
               <p>حذاء رياضي أنيق مصنوع من خامات عالية الجودة، يجمع بين الشمواه الفاخر والنسيج القماشي لتهوية مثالية وراحة مستمرة. تصميم عملي باللون الكحلي مع تفاصيل بيضاء عصرية، يناسب الاستخدام اليومي والحركة المستمرة. النعل مصمم لامتصاص الصدمات ويوفر ثبات وقوة تحمل طوال اليوم.
@@ -103,7 +109,7 @@
             <div class="photos third"></div>
           </div> 
         </div>
-        <div class="our-partners" id="our-partners">
+        <div class="our-partners" id="our-partners" data-aos="fade-up">
           <h1>شركأنا في النجاح</h1>
           <div class="partners-logo">
             <div class="Tie-house"></div>
@@ -111,7 +117,7 @@
           </div>
         </div>
     </div>
-  <footer id="contact">
+  <footer id="contact" data-aos="fade-up">
     <!-- <div class="footer-logo"></div> -->
     <h1 dir="rtl">تواصل معنا، واجعل كل خطوة مميزة.</h1>
     <ul>
@@ -121,11 +127,14 @@
     </ul>
     <h4>© 2025 الخطيب للأحذية الجلدية. جميع الحقوق محفوظة</h4>
   </footer>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     function handleMenuLinkClick() {
       // إغلاق القائمة بإلغاء تفعيل الـ checkbox
       document.getElementById('menu-toggle').checked = false;
     }
+
+    AOS.init();
   </script>
 </body>
 </html>
